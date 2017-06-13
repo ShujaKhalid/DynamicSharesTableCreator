@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+	<style type="text/css" media="screen">
+
+		table{
+		border-collapse:collapse;
+		border:1px solid black;
+		}
+
+		table td{
+		border:1px solid black;
+		}		
+		table tr{
+		border:1px solid black;
+		}
+
+	</style>
+</head>
+<body>
+
+<form method="GET" id="my_form"></form>
+
+<table id=mainTable>
+	<tr id=titleRow>
+        <td>
+            <th style="font-weight:bold">Position &nbsp</th>
+        </td>
+        <td>
+            <input style="font-weight:bold" type="text" value="Member 1" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold" type="text" value="Member 2" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold" type="text" value="Member 3" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold" type="text" value="Member 4" name="mem4" form="my_form" />
+        </td>
+       	<td>
+    		Total
+	    </td>	
+	</tr>
+	<tr height=20 ></tr>
+	<tr height=20 ></tr>
+    <tr id=outRow1>
+        <td>
+            <th style="font-weight:bold">Your Share $ &nbsp</th>
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #FAE5D3;" type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #FAE5D3;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #FAE5D3;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #FAE5D3;" type="text" name="mem4" form="my_form" />
+        </td>
+	    <td>
+            <input style="font-weight:bold;background-color: #FAE5D3;" type="text" name="mem4" form="my_form" />
+	    </td>
+    </tr>	
+    <tr id=outRow2>
+        <td>
+            <th>Your Share % &nbsp</th>
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #F4D03F;" bgcolor=#F4D03F type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #F4D03F;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #F4D03F;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;background-color: #F4D03F;" type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>	    
+  	<tr height=20 ></tr>
+    <tr id=theoContRow>
+        <td>
+            <th style="color: blue;font-weight:bold;" style="color: blue;">Theoretical Contribution - non Cash &nbsp</th>
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" style="color: blue;" type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" style="color: blue;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" style="color: blue;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" style="color: blue;" type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>
+   	<tr height=20 ></tr>
+    <tr id=actContRow>
+        <td>
+            <th style="color: blue;">Contribution - Cash &nbsp</th>
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>
+   	<tr height=20 ></tr>
+    <tr id=joinRow>
+        <td>
+            <th>Date joined the project &nbsp</th>
+        </td>
+        <td>
+            <input type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem4" form="my_form" />
+        </td>
+    </tr> 
+    <tr id=days>
+        <td>
+            <th>Days on the project &nbsp</th>
+        </td>
+        <td>
+            <input type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>
+    <!--
+    <tr id=vested>
+        <td>
+            <th>Vested time &nbsp</th>
+        </td>
+        <td>
+            <input style="font-weight:bold;" type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="font-weight:bold;" type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>  
+    -->
+  	<tr height=20 ></tr>
+    <tr id=oppCostNull>
+        <td>
+            <th bgcolor="gray">Opportunity Cost </th>
+        </td>
+        <td bgcolor="gray"></td>
+        <td bgcolor="gray"></td>
+        <td bgcolor="gray"></td>
+        <td bgcolor="gray"></td>
+    </tr>
+    <tr id=oppRow>
+        <td>
+            <th>Opportunity Cost / Salary &nbsp</th>
+        </td>
+        <td>
+            <input type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>
+    <tr id=oppRowHr>
+        <td>
+            <th>Opportunity Cost per hour &nbsp</th>
+        </td>
+        <td>
+            <input type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>
+    <tr id=hrsRow>
+        <td>
+            <th>Hours worked &nbsp</th>
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>
+  	<tr height=20 ></tr>
+    <tr id=cashNull>
+        <td>
+            <th bgcolor="gray">Cash </th>
+        </td>
+        <td bgcolor="gray"></td>
+        <td bgcolor="gray"></td>
+        <td bgcolor="gray"></td>
+        <td bgcolor="gray"></td>
+    </tr>
+    <tr id=invRow>
+        <td>
+            <th>Invested Cash &nbsp</th>
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>
+    <tr id=conRow>
+        <td>
+            <th>Contributed Cash &nbsp</th>
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem1" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem2" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem3" form="my_form" />
+        </td>
+        <td>
+            <input style="color: blue;font-weight:bold;" type="text" name="mem4" form="my_form" />
+        </td>
+    </tr>    
+    <!--
+	<tr>
+	    <td>
+	    	<th>
+	    		Total
+	    	</th>
+	    </td>	
+	    <td>
+            <input style="font-weight:bold;" type="text" name="mem4" form="my_form" />
+	    </td>	
+	</tr>
+	-->
+	<td>
+	    <td>
+			<button onclick="calculate()">Calculate!</button>
+	    </td>		
+	    <tr>
+			<td>
+				<td>
+					<button onclick="addMember()">Add New Member</button>
+				</td>
+			</td>
+	    </tr>
+	    <tr>
+		    <td>
+			    <td>
+					<button onclick="drawPie()">Draw a Pie graph</button>
+				</td>
+		    </td>	    	
+	    </tr>
+	    <tr>
+		    <td>
+			    <td>
+					<button onclick="drawBar()">Draw a Bar graph</button>
+				</td> 
+		    </td>	    	
+	    </tr>
+	</td>
+
+</table>
+
+	<td>
+		<div id="chartContainerPie" style="height: 300px; width: 100%;"></div>
+	</td>
+	<td>
+		<div id="chartContainerBar" style="height: 300px; width: 100%;"></div>
+	</td>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+	function addMember() {
+    var outRow1 = document.getElementById("outRow1");
+    var outRow2 = document.getElementById("outRow2");
+    var theoContRow = document.getElementById("theoContRow");
+    var actContRow = document.getElementById("actContRow");
+    var joinRow = document.getElementById("joinRow");
+    var days = document.getElementById("days");
+    var oppRow = document.getElementById("oppRow");
+    var oppRowHr = document.getElementById("oppRowHr");
+    var hrsRow = document.getElementById("hrsRow");
+    var invRow = document.getElementById("invRow");
+    var conRow = document.getElementById("conRow");
+    var titleRow = document.getElementById("titleRow");
+    var cashNull = document.getElementById("cashNull");
+    var oppCostNull = document.getElementById("oppCostNull");
+
+    var inputRows = 12;
+    //Insert a set no. of rows
+    //for (i=outRow2.cells.length-1; i>1; i--) {
+    console.log(joinRow.cells.length+1)
+    console.log(titleRow)
+	joinRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	//cashNull.insertCell(titleRow.cells.length-1).innerHTML = '<td bgcolor="gray"></td>';
+	//oppCostNull.insertCell(titleRow.cells.length-1).innerHTML = '<td bgcolor="gray"></td>';
+	outRow1.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold;background-color: #FAE5D3;" type="text" value="" form="my_form">';
+	outRow2.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold;background-color: #F4D03F;" type="text" value="" form="my_form">';
+	theoContRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	actContRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	days.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	oppRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	oppRowHr.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	hrsRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	invRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	conRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="" form="my_form">';
+	titleRow.insertCell(titleRow.cells.length-1).innerHTML = '<input style="font-weight:bold" type="text" value="New Member" form="my_form">';
+	console.log(titleRow)
+	//titleRow.insertCell(0);
+	//x.innerHTML = "Member " + joinRow.length-1;
+	}
+	//}
+</script>
+
+<script type="text/javascript">
+	function calculate() {
+		//Inputs
+		//names //members
+		//actContRow //actual cash contribution
+		//joinRow //date joined the project
+		//oppRow //opportunity cost/salary
+		//varhrsRow //hours worked
+		//varinvRow //invested cash
+		//varconRow //contributed cash
+
+		//Intermediates
+		var theoContRow = 0; //theoretical contribution - non Cash
+		var days = 0; //days on the project
+		var vested = 0; //vested
+		var oppRowHr = 0; //Opportunity cost per hour
+
+		//Output
+		var outRow1 = 0; //your share $
+		var outRow2 = 0; //your share %
+
+	    //var row = document.getElement1ById("conRow");
+	    console.log(document.getElementById("conRow").cells[2].children[0].value);
+	    var len = document.getElementById("conRow").cells.length;
+	    // Get the names
+	    var names = [];
+	    for (i=2;i<len;i++) {
+	    	names[i-2] = document.getElementById("conRow").cells[i].children[0].value;
+	    	console.log(names[i-2])
+	    };
+	    // Display the names
+	    console.log(names)
+
+	    // Get the actual cash contribution
+	    var actContRow = [];
+	    for (i=2;i<len;i++) {
+	    	actContRow[i-2] = document.getElementById("actContRow").cells[i].children[0].value;
+	    };
+	    // Display the actual cash contribution
+	    console.log(actContRow)
+
+	    // Get the date joined the project
+	    var joinRow = [];
+	    for (i=2;i<len;i++) {
+	    	joinRow[i-2] = document.getElementById("joinRow").cells[i].children[0].value;
+	    };
+	    // Display the date joined the project
+	    console.log(joinRow)
+
+	    // Get the opportunity cost/salary
+	    var oppRow = [];
+	    for (i=2;i<len;i++) {
+	    	oppRow[i-2] = document.getElementById("oppRow").cells[i].children[0].value;
+	    };
+	    // Display the opportunity cost/salary
+	    console.log(oppRow)
+
+	    // Get the hours worked
+	    var hrsRow = [];
+	    for (i=2;i<len;i++) {
+	    	hrsRow[i-2] = document.getElementById("hrsRow").cells[i].children[0].value;
+	    };
+	    // Display the hours worked
+	    console.log(hrsRow)
+
+	    // Get the invested cash
+	    var invRow = [];
+	    for (i=2;i<len;i++) {
+	    	invRow[i-2] = document.getElementById("invRow").cells[i].children[0].value;
+	    };
+	    // Display the invested cash
+	    console.log(invRow)
+
+	    // Get the contributed cash
+	    var conRow = [];
+	    for (i=2;i<len;i++) {
+	    	conRow[i-2] = document.getElementById("conRow").cells[i].children[0].value;
+	    };
+	    // Display the contributed cash
+	    console.log(conRow)
+
+
+	    //------------------------------------
+	    // Intermediate calculations begin...
+	    //------------------------------------
+		var theoContRow = []; //theoretical contribution - non Cash
+		var days = []; //days on the project
+		var vested = []; //vested
+		var oppRowHr = []; //Opportunity cost per hour
+		var outRow1 = []; //output Q
+		var outRow2 = []; //output %
+		var summer = 0;
+
+		
+		for (i=0;i<oppRow.length;i++) {
+			oppRowHr[i] = oppRow[i]/52.1429/37.5; // Calculate the cost per hour based on the total cost
+			var joinDate = new Date(joinRow[i]);
+			var now = new Date();
+			var timeDiff = Math.abs(now.getTime() - joinDate.getTime());
+			var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+			days[i] = diffDays;
+			theoContRow[i] = oppRowHr[i]*hrsRow[i];
+			outRow1[i] = 4*actContRow[i]+theoContRow[i];
+			summer += outRow1[i]; 
+		}
+		console.log(summer);
+		//Find the percent shares
+		for (i=0;i<oppRow.length;i++) {
+			outRow2[i] = (outRow1[i]/summer)*100;
+		};
+		//Write the intermediate variables to the html table
+		console.log(days);
+		console.log(outRow1);
+		console.log(outRow2);
+		console.log(oppRowHr);
+		console.log(hrsRow);
+		console.log(theoContRow);
+
+		for (i=2;i<len;i++) {
+			document.getElementById("days").cells[i].children[0].value = Math.round(days[i-2] * 100) / 100;
+			document.getElementById("outRow1").cells[i].children[0].value = Math.round(outRow1[i-2] * 100) / 100;
+			document.getElementById("outRow2").cells[i].children[0].value = Math.round(outRow2[i-2] * 100) / 100;
+			document.getElementById("oppRowHr").cells[i].children[0].value = Math.round(oppRowHr[i-2] * 100) / 100;
+			document.getElementById("hrsRow").cells[i].children[0].value = hrsRow[i-2];
+			document.getElementById("theoContRow").cells[i].children[0].value = Math.round(theoContRow[i-2] * 100) / 100;
+			//document.getElementById("vested").cells[i].children[0].value = vested[i-2];
+		}
+
+		//Assign the total value:
+		document.getElementById("outRow1").cells[6].children[0].value = Math.round(summer * 100) / 100;
+
+		//draw the pie chart:
+		//drawPie(Math.round(days[i-2],2));
+	 
+	}	
+</script>
+
+<script type="text/javascript">
+	function drawPie(temp) {
+		var chart = new CanvasJS.Chart("chartContainerPie",
+		{
+			title:{
+				text: "Equity Split"
+			},
+	        animationEnabled: true,
+			legend:{
+				verticalAlign: "center",
+				horizontalAlign: "left",
+				fontSize: 20,
+				fontFamily: "Helvetica"        
+			},
+			theme: "theme1",
+			data: [
+			{        
+				type: "pie",       
+				indexLabelFontFamily: "Calibri",       
+				indexLabelFontSize: 20,
+				indexLabel: "{label} {y}%",
+				startAngle:-90,      
+				showInLegend: true,
+				toolTipContent:"{legendText} {y}%",
+				dataPoints: [
+					{  y:  8.8, legendText:"Member 1", label: "Member 1" },
+					{  y: 36.4, legendText:"Member 2", label: "Member 2" },
+					{  y:  1.1, legendText:"Member 3", label: "Member 3" },
+					{  y: 53.7, legendText:"Member 4", label: "Member 4" },       
+				]
+			}
+			]
+		});
+		chart.render();
+	}
+</script>
+
+
+<script type="text/javascript">
+	function drawBar(temp) {
+		var chart = new CanvasJS.Chart("chartContainerBar",
+		{
+			title:{
+				text: "Shares"
+			},
+	        animationEnabled: true,
+	      legend: {
+	        cursor:"pointer",
+	        itemclick : function(e) {
+	          if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+	              e.dataSeries.visible = false;
+	          }
+	          else {
+	              e.dataSeries.visible = true;
+	          }
+	          chart.render();
+		      }
+            },      
+			theme: "theme1",
+			data: [
+			{        
+				type: "bar",       
+				indexLabelFontFamily: "Calibri",       
+				indexLabelFontSize: 20,
+				indexLabel: "{y}",
+				showInLegend: "yes",
+				toolTipContent:"{y}",
+				legendText:"Member 1",
+				legendText:"Member 2",
+				legendText:"Member 3",
+				legendText:"Member 4",
+				dataPoints: [
+					{  y: 3082.81,  label: "Member 1" },
+					{  y: 12776.68, label: "Member 2" },
+					{  y: 396.35, label: "Member 3" },
+					{  y: 18834.03, label: "Member 4" },  	     
+				]
+			}
+			],
+
+		});
+		chart.render();
+	}
+</script>
